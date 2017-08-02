@@ -1,9 +1,32 @@
-# AC3.2-Tableviews_Part_4
+# AC3.2-Tableviews Part 4: **Title Goes Here**
 
+---
+### Readings
 
-### 6. Revealing the MVP to Reel Good
+ 1. [General Reference on Xcode (very useful)](http://help.apple.com/xcode/mac/8.0)
+ 2. [Configuring a Segue in Storyboard - Apple](http://help.apple.com/xcode/mac/8.0/#/deve5fc2eb19)
+ 3. [Using Segues (lots of great info here)](https://developer.apple.com/library/content/featuredarticles/ViewControllerPGforiPhoneOS/UsingSegues.html)
+ 4. [Navigation Controller Implementation - tuts+ (helpful reference and example)](https://code.tutsplus.com/tutorials/ios-from-scratch-with-swift-navigation-controllers-and-view-controller-hierarchies--cms-25462)
 
-![final version app](http://i.imgur.com/YX84STdl.png)
+#### Further Readings
+
+---
+### Vocabulary
+
+1. **MVP (Minimum Viable Product)** - FILL ME IN AFTER QUORA LOADS [Quora](https://www.quora.com/What-is-a-minimum-viable-product/answer/Suren-Samarchyan?srid=dpgi)
+
+---
+### 0. Objectives
+
+1. Understand segues in storyboard to transition between view controllers
+2. Futher our understanding of `UITableViewController` delegate functions
+3. Create a new custom `UIViewController` to display a single `Movie` object's data
+
+---
+
+### 1. Revealing the MVP to Reel Good
+
+<img src="./Images/first_mvp.png" alt="First MVP" width="400">
 
 "Stunning!" - Reel Good, CEO
 
@@ -16,40 +39,23 @@
 "It's OK." - Reel Good, Crusty iOS Engineer
 
 
-Great work on this MVP, but now Reel Good is expecting a lot more out of the next iterration. They want a full screen detail view on the movie and some design tweaks. On top of this, your engineering team has decided that the code base needs some clean up before it gets to large! The next stage of this project will be even more challenging and there's no time to rest on laurels.
-
----
-
-### Time to Reel it In
+Great work on this MVP, but now Reel Good is expecting a lot more out of the next iteration. They want a full screen detail view on the movie and some design tweaks. On top of this, your engineering team has decided that the code base needs some clean up before it gets to large! The next stage of this project will be even more challenging and there's no time to rest on laurels.
 
 Reel Good took our latest prototype and presented it to their board of investors as the cornerstone of their mobile initiative. The extra work we put behind the design of the app must have really sold it, because Reel Good now needs one more set of changes before they take the app into beta.
 
 For the next [MVP](https://www.quora.com/What-is-a-minimum-viable-product/answer/Suren-Samarchyan?srid=dpgi), Reel Good wants to be able to tap on the movie cell to display full details of the movie on a different screen.
 
+#### Planning
+
 After the meeting with Reel Good, we sat down with our engineering team and sketched out the necessary requirements of this next task and broke them down:
 
 1. We have to create a new view controller to present a full screen version of the movie data
-  - We need to make sure that navigation works to go to and from one of these view controllers.
-  - The proper movie data has to be transferred from one view controller to the next, so we need to do some data handling
+2. We need to make sure that navigation works to go to and from one of these view controllers.
+3. The proper movie data has to be transferred from one view controller to the next, so we need to do some data handling
 
-A large part of development is being able to translate feature requests into actual programming work. Taking some time to plan out a course of action before starting to code will likely save you some time in the end. Even then, there absolutely will be unforseen problems that you will encounter. But that's just part of the fun of programming.
-
----
-### Goals
-1. Create a new custom `UIViewController` to display a single `Movie` object's data
-2. Understand segues in storyboard to transition between view controllers
-3. Better understanding of the delegate pattern in programming.
+> Developer's note: A huge part of development is being able to translate feature requests from clients into actual programming work. Taking some time to plan out a course of action before starting to code will likely save you a lot of time in the course of your project. Though even with the best planning, there absolutely will be unforseen problems that you will encounter. But that's just part of the fun of programming.
 
 ---
-
-### Readings
- 1. [General Reference on Xcode (very useful)](http://help.apple.com/xcode/mac/8.0)
- 2. [Configuring a Segue in Storyboard - Apple](http://help.apple.com/xcode/mac/8.0/#/deve5fc2eb19)
- 3. [Using Segues (lots of great info here)](https://developer.apple.com/library/content/featuredarticles/ViewControllerPGforiPhoneOS/UsingSegues.html)
- 4. [Navigation Controller Implementation - tuts+ (helpful reference and example)](https://code.tutsplus.com/tutorials/ios-from-scratch-with-swift-navigation-controllers-and-view-controller-hierarchies--cms-25462)
-
----
-
 ### 1. Adding a new `UIViewController` to Display a `Movie`
 
 #### Storyboard Changes **(Use iPhone 6s for your simulation)**
