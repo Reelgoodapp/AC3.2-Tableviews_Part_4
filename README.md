@@ -447,11 +447,11 @@ To acheive that goal, here are a few pointers (reveal as needed):
 3. Add two labels to this view with the following details (screen shot):
 
   <ul>
-    <li><code>castTitleLabel</code></li>
+    <li>Create the <code>castTitleLabel</code>:</li>
 
     <li> System - Bold, 24pt, Number of Lines = 1, 8pt margins to top, left, right. Vertical Content Hugging - 1000 </li>
 
-    <li><code>castListLabel</code></li>
+    <li>Create the <code>castListLabel</code>:</li>
 
     <li>System - Regular, 18pt, Number of Lines = 0, 8pt top margin to castTitleLabel, 24pt left margin, 8pt right margin.</li>
 
