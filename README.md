@@ -432,12 +432,10 @@ To acheive that goal, here are a few pointers (reveal as needed):
 
 <br>
 <details><summary>Step 1-2: Creating a Subclass</summary>
-  <br><br>
-
-  1. Create a new <code>UIViewController</code> sublcass called <code>MovieCastDetailViewController</code>
-  2. Drag a <code>UIViewController</code> into storyboard, and change its custom class to <code>MovieCastDetailViewController</code>
-
-  <br><br>
+<br><br>
+1. Create a new <code>UIViewController</code> sublcass called <code>MovieCastDetailViewController</code>
+2. Drag a <code>UIViewController</code> into storyboard, and change its custom class to <code>MovieCastDetailViewController</code>
+<br><br>
 </details>
 <br>
 
@@ -446,17 +444,13 @@ To acheive that goal, here are a few pointers (reveal as needed):
 
 3. Add two labels to this view with the following details (screen shot):
 
-  <ul>
-    <li>Create the <code>castTitleLabel</code>:</li>
-
-    <li> System - Bold, 24pt, Number of Lines = 1, 8pt margins to top, left, right. Vertical Content Hugging - 1000 </li>
-
-    <li>Create the <code>castListLabel</code>:</li>
-
-    <li>System - Regular, 18pt, Number of Lines = 0, 8pt top margin to castTitleLabel, 24pt left margin, 8pt right margin.</li>
-
-    <li><img src="./Images/cast_vc_storyboard.png" width="400" alt="Cast VC in Storyboard"></li>
-  </ul>
+<ul>
+<li>Create the <code>castTitleLabel</code>:</li>
+<li> System - Bold, 24pt, Number of Lines = 1, 8pt margins to top, left, right. Vertical Content Hugging - 1000 </li>
+<li>Create the <code>castListLabel</code>:</li>
+<li>System - Regular, 18pt, Number of Lines = 0, 8pt top margin to castTitleLabel, 24pt left margin, 8pt right margin.</li>
+<li><img src="./Images/cast_vc_storyboard.png" width="400" alt="Cast VC in Storyboard"></li>
+</ul>
 
 <br><br>
 </details>
@@ -468,14 +462,13 @@ To acheive that goal, here are a few pointers (reveal as needed):
 4. Create a segue between <code>MovieTableviewCell</code> and <code>MovieCastDetailViewController</code>, though instead of chosing a segue of type "Selection Segue" you'll be using "Accessory Action" (but you're still using the <em>Push</em> type). Give the segue and identifier of <code>MovieCastDetailSegue</code>
 
 <ul>
-  <li>
-    Creating the segue of type "Accessory Action" should automatically add a Disclosure Indicator accessory view to the <code>MovieTableviewCell</code>, but be sure to switch it to "Detail"
-  </li>
+<li>
+Creating the segue of type "Accessory Action" should automatically add a Disclosure Indicator accessory view to the <code>MovieTableviewCell</code>, but be sure to switch it to "Detail"
+</li>
 
-  <li>
-    <img src="./Images/storyboard_overview_with_cast_vc.png" width="500" alt="Storyboard overview with Cast VC added">
-  </li>
-
+<li>
+<img src="./Images/storyboard_overview_with_cast_vc.png" width="500" alt="Storyboard overview with Cast VC added">
+</li>
 </ul>
 
 5. Update your code in <code>MovieTableViewController.prepare(for:sender:)</code> to recognize the new segue identifier
