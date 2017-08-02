@@ -1,4 +1,4 @@
-# AC3.2-Tableviews Part 4: **Title Goes Here**
+# AC3.2-Tableviews Part 4: **Segues**
 
 ---
 ### Readings
