@@ -138,8 +138,9 @@ class MovieTableViewController: UITableViewController {
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		
 		// 1. We need to check what our sender is. Afterall, there might be multiple segues set up...
-		if let tappedMovieCell: MovieTableViewCell = sender as? MovieTableViewCell {
+		if let tappedMovieCell: UITableViewCell = sender as? UITableViewCell {
 			// 2. check for the right storyboard segue
 			if segue.identifier == "MovieDetailViewSegue" {
 				
@@ -172,6 +173,29 @@ class MovieTableViewController: UITableViewController {
 //				movieDetailViewController.genreLabel.text = "Genre: " + cellMovie.genre.capitalized
 //				movieDetailViewController.locationLabel.text = "Locations: " + cellMovie.locations.joined(separator: ", ")
 //				movieDetailViewController.summaryFullTextLabel.text = cellMovie.summary
+			}
+			else if segue.identifier == "MovieCastDetailSegue" {
+				let castDetailViewController: MovieCastDetailViewController = segue.destination as! MovieCastDetailViewController
+				
+				let cellIndexPath = tableView.indexPath(for: tappedMovieCell)!
+				
+				// 5. Copy most of this code from cellForRow
+				var cellMovie: Movie!
+				if cellIndexPath.section == 0 {
+					let actionMovies = self.filterMovies(for: .action)
+					cellMovie = actionMovies[cellIndexPath.row]
+				}
+				else if cellIndexPath.section == 1 {
+					let animatedMovies = self.filterMovies(for: .animation)
+					cellMovie = animatedMovies[cellIndexPath.row]
+				}
+				else {
+					let dramaticMovies = self.filterMovies(for: .drama)
+					cellMovie = dramaticMovies[cellIndexPath.row]
+				}
+				
+				// 6. set the destination MovieDetailViewController's selectedMovie property
+				castDetailViewController.selectedMovie = cellMovie
 			}
 		}
 	}

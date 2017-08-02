@@ -380,38 +380,125 @@ Tough question, but incredibly important to understand!
 
 ---
 
-### 2. Exercise
+### 2. Exercises
 
-It's great that we've got this working for `MovieTableViewCell`, but we have two more prototype cells (`MovieRightAlignedTableViewCell` and `Alt1TableViewCell`) that need this functionality as well!
+> Note: There are no tests for these exercises
 
-You may have noticed that we didn't add in a label for `Movie.cast`.
+#### Warm Up: Adding A Title to the Navigation
+Update the title of the `UINavigationController` of `MovieDetailViewController` to have the name of the `Movie` being viewed
 
-What we'd like to do is be able to present a view controller of just the `Actor`s for each movie when you tap on an accessory view of the `MovieTableviewCell`.
+#### Warm Up: More Segues!
+It's great that we've got this working for `MovieTableViewCell`, but we have two more prototype cells (`MovieRightAlignedTableViewCell` and `Alt1TableViewCell`) that need this functionality as well! Update your storyboard and code so that you can segue from any one of the cell types.
 
-To acheive that goal, here are a few pointers:
+<br>
+<details><summary>Hint 1</summary>
+<br><br>
+Do you need to have different cell identifiers to perform the same segue? Or does the same one work for all three cell types?
+<br><br>
+</details>
+<br>
 
-1. Create a new `UIViewController` sublcass called `MovieCastDetailViewController`
-2. Drag a `UIViewController` into storyboard, and change its custom class to `MovieCastDetailViewController`
+<br>
+<details><summary>Hint 2</summary>
+<br><br>
+You really only need to slightly change your code in <code>prepare(for:sender:)</code> to make this work.
+<br><br>
+</details>
+<br>
+
+<br>
+<details><summary>Hint 3</summary>
+<br><br>
+Think about how to change <code>if let tappedMovieCell: MovieTableViewCell = sender as? MovieTableViewCell</code>, specifically
+<br><br>
+</details>
+<br>
+
+<br>
+<details><summary>Hint 4</summary>
+<br><br>
+  If you're having trouble coming up with the quick solution, go ahead and write out the long form first and make sure it works. Then see if you notice where the code can be improved.
+<br><br>
+</details>
+<br>
+
+#### Workout: New Accesory Segue
+
+You may have noticed that we didn't add in a label for `cast` of each movie.
+
+What we'd like to do is be able to present a view controller of just the `Actor`s for each movie when you tap on an **accessory** view of the `MovieTableviewCell` (you can do this for both `MovieRightAlignedTableViewCell` and `Alt1TableViewCell`, but start with `MovieTableviewCell` for now).
+
+To acheive that goal, here are a few pointers (reveal as needed):
+
+<br>
+<details><summary>Step 1-2: Creating a Subclass</summary>
+  <br><br>
+
+  1. Create a new <code>UIViewController</code> sublcass called <code>MovieCastDetailViewController</code>
+  2. Drag a <code>UIViewController</code> into storyboard, and change its custom class to <code>MovieCastDetailViewController</code>
+
+  <br><br>
+</details>
+<br>
+
+<details><summary>Step 3: Adding Labels</summary>
+<br><br>
+
 3. Add two labels to this view with the following details (screen shot):
-  - `castTitleLabel`:
-    - `Roboto - Bold, 24pt`, Number of Lines = 1, `8pt` margins to top, left, right. `Vertical Content Hugging - 1000`
-  - `castListLabel`:
-    - `Roboto - Regular, 18pt`, Number of Lines = 0, `8pt` top margin to `castTitleLabel`, `24pt` left margin, `8pt` right margin.
-  - ![Cast List VC Storyboard](http://i.imgur.com/wCuTQo6l.png)
-3. Create a segue between `MovieTableviewCell` and `MovieCastDetailViewController`, though instead of chosing a segue of type "Selection Segue" you'll be using "Accessory Action". Give the segue and identifier of `MovieCastDetailSegue`
-  - Creating the segue of type "Accessory Action" should automatically add a "Disclosure Indicator" accesory view to the `MovieTableviewCell`, but be sure to switch it to "Detail"
-  - Storyboard will look something like this:
-  - ![Full Storyboard for Exercise 2](http://i.imgur.com/a3OGYpBl.png)
-5. Update your code in `MovieTableViewController.prepare(for:sender:)` to recognize the new segue identifier
-6. Populate your `castListLabel` with the `Actor` names so that your final product looks like
-![Table View Controller w/ Detail Accessory](http://i.imgur.com/uv8HuXQl.png)
-![Cast List Detail VC](http://i.imgur.com/V5lLLSLl.png)
 
-#### Other Optional Exercises
-1. Update the title of the `UINavigationController` of `MovieDetailViewController` to have the name of the `Movie` being viewed
-2. Same as the above, but for the `MovieCastDetailViewController`
+  <ul>
+    <li><code>castTitleLabel</code></li>
+      <ul>
+        <li>System - Bold, 24pt, Number of Lines = 1, 8pt margins to top, left, right. Vertical Content Hugging - 1000</li>
+      </ul>
 
+      <li><code>castListLabel</code></li>
+      <ul>
+          <li>System - Regular, 18pt, Number of Lines = 0, 8pt top margin to castTitleLabel, 24pt left margin, 8pt right margin.</li>
+      </ul>
 
+      <li>
+        <img src="./Images/cast_vc_storyboard.png" width="400" alt="Cast VC in Storyboard">
+      </li>
+  </ul>
+
+<br><br>
+</details>
+<br>
+
+<details><summary>Step 4-5: Creating the Segue</summary>
+<br><br>
+
+4. Create a segue between <code>MovieTableviewCell</code> and <code>MovieCastDetailViewController</code>, though instead of chosing a segue of type "Selection Segue" you'll be using "Accessory Action" (but you're still using the <em>Push</em> type). Give the segue and identifier of <code>MovieCastDetailSegue</code>
+
+<ul>
+  <li>
+    Creating the segue of type "Accessory Action" should automatically add a Disclosure Indicator accessory view to the <code>MovieTableviewCell</code>, but be sure to switch it to "Detail"
+  </li>
+
+  <li>
+    <img src="./Images/storyboard_overview_with_cast_vc.png" width="500" alt="Storyboard overview with Cast VC added">
+  </li>
+
+</ul>
+
+5. Update your code in <code>MovieTableViewController.prepare(for:sender:)</code> to recognize the new segue identifier
+
+<br><br>
+</details>
+<br>
+
+<details><summary>Step 6: Populating the View Controller</summary>
+<br><br>
+6. Populate your <code>castListLabel</code> with the <code>Actor</code> names so that your final product looks like
+
+<img src="./Images/accesory_icon_showing.png" width="400" alt="Accessory Detail Showing">
+<br>
+<img src="./Images/cast_vc_in_sim.png" width="400" alt="Cast List Populated">
+
+<br>
+</details>
+<br>
 
 #### Advanced
 

@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieTableViewCell" rowHeight="200" id="NQa-gd-usH" customClass="MovieTableViewCell" customModule="Tableviews_Part_4" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="MovieTableViewCell" rowHeight="200" id="NQa-gd-usH" customClass="MovieTableViewCell" customModule="Tableviews_Part_4" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NQa-gd-usH" id="I3u-H0-aWI">
@@ -71,6 +71,7 @@
                                     <outlet property="movieSummaryLabel" destination="90p-Ty-yn0" id="kra-Rl-R96"/>
                                     <outlet property="movieTitleLabel" destination="FS7-pK-VSu" id="x8I-uc-4Yv"/>
                                     <segue destination="phx-f0-UyA" kind="show" identifier="MovieDetailViewSegue" id="vhD-pb-2ki"/>
+                                    <segue destination="uWT-rR-neo" kind="show" identifier="MovieCastDetailSegue" trigger="accessoryAction" id="sEW-Tf-fjj"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieRightAlignedTableViewCell" rowHeight="200" id="y7N-qh-cke" customClass="MovieRightAlignedTableViewCell" customModule="Tableviews_Part_4" customModuleProvider="target">
@@ -117,7 +118,7 @@
                                     <outlet property="moviePosterImageView" destination="Diy-p2-bN2" id="8aE-Bu-sz6"/>
                                     <outlet property="movieSummaryLabel" destination="u6N-ut-uO3" id="bE3-d9-1MH"/>
                                     <outlet property="movieTitleLabel" destination="g4t-Gj-998" id="Z1C-2F-zt8"/>
-                                    <segue destination="phx-f0-UyA" kind="show" id="SBa-BS-kI1"/>
+                                    <segue destination="phx-f0-UyA" kind="show" identifier="MovieDetailViewSegue" id="SBa-BS-kI1"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Alt1TableViewCell" rowHeight="200" id="f99-GK-440" customClass="Alt1TableViewCell" customModule="Tableviews_Part_4" customModuleProvider="target">
@@ -188,7 +189,7 @@
                                     <outlet property="movieSummaryLabel" destination="sEK-Rz-Tgp" id="edm-ZD-j4k"/>
                                     <outlet property="movieTitleLabel" destination="mMp-uz-Wgc" id="yN7-rl-hME"/>
                                     <outlet property="movieYearLabel" destination="Gpf-Cm-fSc" id="PZ6-Aw-lJL"/>
-                                    <segue destination="phx-f0-UyA" kind="show" id="Gcg-Ty-FFF"/>
+                                    <segue destination="phx-f0-UyA" kind="show" identifier="MovieDetailViewSegue" id="Gcg-Ty-FFF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -204,6 +205,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RHw-bd-Gmq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="744.79999999999995" y="64.31784107946028"/>
+        </scene>
+        <!--Movie Cast Detail View Controller-->
+        <scene sceneID="7Qp-9o-El3">
+            <objects>
+                <viewController id="uWT-rR-neo" customClass="MovieCastDetailViewController" customModule="Tableviews_Part_4" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZOL-BH-IEt"/>
+                        <viewControllerLayoutGuide type="bottom" id="6BN-tv-xMg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="lhm-Tf-RkX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Cast List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRB-IH-0Dm">
+                                <rect key="frame" x="24" y="72" width="327" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actor List" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKl-YC-AQP">
+                                <rect key="frame" x="40" y="109" width="311" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vKl-YC-AQP" firstAttribute="top" secondItem="WRB-IH-0Dm" secondAttribute="bottom" constant="8" id="1kw-W5-VZH"/>
+                            <constraint firstItem="WRB-IH-0Dm" firstAttribute="leading" secondItem="lhm-Tf-RkX" secondAttribute="leadingMargin" constant="8" id="OjW-8y-byd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WRB-IH-0Dm" secondAttribute="trailing" constant="8" id="SgL-8U-ws5"/>
+                            <constraint firstItem="WRB-IH-0Dm" firstAttribute="top" secondItem="ZOL-BH-IEt" secondAttribute="bottom" constant="8" id="Zad-YC-SY4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vKl-YC-AQP" secondAttribute="trailing" constant="8" id="dgu-Q1-Ocb"/>
+                            <constraint firstItem="vKl-YC-AQP" firstAttribute="leading" secondItem="lhm-Tf-RkX" secondAttribute="leadingMargin" constant="24" id="zVf-SJ-PdW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="castListLabel" destination="vKl-YC-AQP" id="w5P-JL-fcZ"/>
+                        <outlet property="castTitleLabel" destination="WRB-IH-0Dm" id="AHB-Fx-E91"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5VN-Rq-goy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1542" y="-637"/>
         </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="ZyM-MG-bwp">
@@ -303,6 +348,6 @@
         <image name="reel" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vhD-pb-2ki"/>
+        <segue reference="Gcg-Ty-FFF"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -21,6 +21,7 @@
 		148B220C1D99BC9400A04A6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148B220B1D99BC9400A04A6F /* AppDelegate.swift */; };
 		148B22641D99BCB500A04A6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 148B22631D99BCB500A04A6F /* Assets.xcassets */; };
 		14CC5DB41F32407D008DD99B /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5DB31F32407D008DD99B /* MovieDetailViewController.swift */; };
+		14CC5DB61F325665008DD99B /* MovieCastDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC5DB51F325665008DD99B /* MovieCastDetailViewController.swift */; };
 		14FFF7881F2A4617009C9664 /* MovieRightAlignedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FFF7871F2A4617009C9664 /* MovieRightAlignedTableViewCell.swift */; };
 		14FFF78A1F2A497C009C9664 /* Alt1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FFF7891F2A497C009C9664 /* Alt1TableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		148B220B1D99BC9400A04A6F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Tableviews_Part_3/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		148B22631D99BCB500A04A6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Tableviews_Part_3/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		14CC5DB31F32407D008DD99B /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieDetailViewController.swift; path = Tableviews_Part_3/ViewControllers/MovieDetailViewController.swift; sourceTree = SOURCE_ROOT; };
+		14CC5DB51F325665008DD99B /* MovieCastDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieCastDetailViewController.swift; path = Tableviews_Part_3/ViewControllers/MovieCastDetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		14FFF7871F2A4617009C9664 /* MovieRightAlignedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieRightAlignedTableViewCell.swift; path = Tableviews_Part_3/Views/MovieRightAlignedTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		14FFF7891F2A497C009C9664 /* Alt1TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alt1TableViewCell.swift; path = Tableviews_Part_3/Views/Alt1TableViewCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -126,6 +128,7 @@
 			children = (
 				148B21F31D99BBFD00A04A6F /* MovieTableViewController.swift */,
 				14CC5DB31F32407D008DD99B /* MovieDetailViewController.swift */,
+				14CC5DB51F325665008DD99B /* MovieCastDetailViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				148B22091D99BC7800A04A6F /* Data.swift in Sources */,
 				148B21F61D99BC0E00A04A6F /* MovieTableViewCell.swift in Sources */,
 				148B22081D99BC7800A04A6F /* Actor.swift in Sources */,
+				14CC5DB61F325665008DD99B /* MovieCastDetailViewController.swift in Sources */,
 				14CC5DB41F32407D008DD99B /* MovieDetailViewController.swift in Sources */,
 				14FFF78A1F2A497C009C9664 /* Alt1TableViewCell.swift in Sources */,
 			);
