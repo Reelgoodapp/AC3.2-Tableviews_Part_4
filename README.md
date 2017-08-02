@@ -8,12 +8,15 @@
  3. [Using Segues (lots of great info here)](https://developer.apple.com/library/content/featuredarticles/ViewControllerPGforiPhoneOS/UsingSegues.html)
  4. [Navigation Controller Implementation - tuts+ (helpful reference and example)](https://code.tutsplus.com/tutorials/ios-from-scratch-with-swift-navigation-controllers-and-view-controller-hierarchies--cms-25462)
 
-#### Further Readings
+#### References
+
+1. [Using Segues - Apple](https://developer.apple.com/library/content/featuredarticles/ViewControllerPGforiPhoneOS/UsingSegues.html)
 
 ---
 ### Vocabulary
 
-1. **MVP (Minimum Viable Product)** - FILL ME IN AFTER QUORA LOADS [Quora](https://www.quora.com/What-is-a-minimum-viable-product/answer/Suren-Samarchyan?srid=dpgi)
+1. **MVP (Minimum Viable Product)** - rapidly building a minimum set of features that is enough to deploy a product and test key assumptions about customers’ interactions with the product. [Quora](https://www.quora.com/What-is-a-minimum-viable-product/answer/Suren-Samarchyan?srid=dpgi)
+2. **Segue** - A segue defines a transition between two view controllers in your app’s storyboard file. [Apple](https://developer.apple.com/library/content/featuredarticles/ViewControllerPGforiPhoneOS/UsingSegues.html)
 
 ---
 ### 0. Objectives
@@ -56,14 +59,17 @@ After the meeting with Reel Good, we sat down with our engineering team and sket
 > Developer's note: A huge part of development is being able to translate feature requests from clients into actual programming work. Taking some time to plan out a course of action before starting to code will likely save you a lot of time in the course of your project. Though even with the best planning, there absolutely will be unforseen problems that you will encounter. But that's just part of the fun of programming.
 
 ---
-### 1. Adding a new `UIViewController` to Display a `Movie`
+### 1. Adding a new `UIViewController` to Display a single `Movie`
 
 #### Storyboard Changes **(Use iPhone 6s for your simulation)**
 1. Drag in a `UIViewController` into `Main.storyboard` from the *Objects Library* in the *Utilities Pane* and place it next to the `MovieTableViewController`
-2. Select the prototype cell (make sure you have the actual `MovieTableViewCell` selected) and Control-Drag to the new `UIViewController`
-3. On the outlet menu that pops up, select "Selection Segue > Show"
+  - <img src="./Images/added_new_view_controller.png" width="500" alt="Placing a new VC on storyboard">
+2. Select the `MovieTableViewCell` prototype cell (make sure you have the actual `cell` selected and not one of its subviews) and `ctrl`-Drag to the new `UIViewController`
+3. On the outlet menu that pops up, select "`Selection Segue > Show`"
+  - <img src="./Images/choosing_selection_segue.png" width="400" alt="Choosing the connection outlet type for a segue">
   - Note: "Accessory Selection" is the action to perform when adding an "accessory view." An example of an accessory view is the `>` (called a "chevron") you see all the way to the right on a cell in the Mail or Messages app on an iPhone.
   - The "Selection" type of segue refers to the action to take when the cell itself is tapped/selected.
+  - <img src="./Images/single_segue_to_vc.png" width="500" alt="Single connected segue to VC">
 4. Select the segue object in storyboard (the -> arrow), and in the *Attribute Inspector*, set it's identifier to `MovieDetailViewSegue`
 5. Drag in a `UIImageView` into the view controller, giving it the following attributes:
   - `8pt` margins at the top, left, and right
@@ -72,14 +78,14 @@ After the meeting with Reel Good, we sat down with our engineering team and sket
   - Switch the image view's `Content Mode` to `Aspect Fit`
 6. Drag in 4 `UILabel`s below the `UIImageView` in a vertical row
   - Label them (in order): `Genre`, `Location`, `Summary` and `Summary Text`
-  - Set their fonts to `Roboto Regular - 17pt`, except for `Summary Text` which will be `Roboto-Light - 14pt`
+  - Set their fonts to `System - 17pt`, except for `Summary Text` which will be `System - Light - 14pt`
   - Set the number of lines for `Summary Text` to 0
 7. Select **all** of the `UILabel`s at once, by holding down the Command (⌘) Key while clicking on them
   - Select *Pin* and set it to **8pt margins**, also making sure that the checkmark for "Constrain to margins" is selected
-  - Set the *Vertical Content Hugging Priority* to 1000 for all labels except `Summary Text`. Instead, set the *Vertical Compression Resistance* of `Summary Text` to 1000
+  - Set the `Vertical Content Hugging Priority` to 1000 for all labels except `Summary Text`. Instead, set the *Vertical Compression Resistance* of `Summary Text` to 1000
 8. Your view controller should resemble:
 
-  ![Storyboard of MovieDetailViewController](http://i.imgur.com/HAQeLXIl.png)
+<img src="./Images/movie_vc_ui_storyboard.png" width="400" alt="Setting up the Movie VC UI">
 
 Being able to set constraints in this batching form is one of the nice advantages of using storyboards.
 
