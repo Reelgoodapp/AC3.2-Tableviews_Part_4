@@ -448,18 +448,14 @@ To acheive that goal, here are a few pointers (reveal as needed):
 
   <ul>
     <li><code>castTitleLabel</code></li>
-      <ul>
-        <li>System - Bold, 24pt, Number of Lines = 1, 8pt margins to top, left, right. Vertical Content Hugging - 1000</li>
-      </ul>
 
-      <li><code>castListLabel</code></li>
-      <ul>
-          <li>System - Regular, 18pt, Number of Lines = 0, 8pt top margin to castTitleLabel, 24pt left margin, 8pt right margin.</li>
-      </ul>
+    <li> System - Bold, 24pt, Number of Lines = 1, 8pt margins to top, left, right. Vertical Content Hugging - 1000 </li>
 
-      <li>
-        <img src="./Images/cast_vc_storyboard.png" width="400" alt="Cast VC in Storyboard">
-      </li>
+    <li><code>castListLabel</code></li>
+
+    <li>System - Regular, 18pt, Number of Lines = 0, 8pt top margin to castTitleLabel, 24pt left margin, 8pt right margin.</li>
+
+    <li><img src="./Images/cast_vc_storyboard.png" width="400" alt="Cast VC in Storyboard"></li>
   </ul>
 
 <br><br>
