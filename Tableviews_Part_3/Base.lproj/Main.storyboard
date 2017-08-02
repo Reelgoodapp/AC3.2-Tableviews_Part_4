@@ -205,10 +205,10 @@
             </objects>
             <point key="canvasLocation" x="744.79999999999995" y="64.31784107946028"/>
         </scene>
-        <!--View Controller-->
+        <!--Movie Detail View Controller-->
         <scene sceneID="ZyM-MG-bwp">
             <objects>
-                <viewController id="phx-f0-UyA" sceneMemberID="viewController">
+                <viewController id="phx-f0-UyA" customClass="MovieDetailViewController" customModule="Tableviews_Part_4" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gay-OH-Cpb"/>
                         <viewControllerLayoutGuide type="bottom" id="OIg-FD-32v"/>
@@ -268,6 +268,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="xKa-RC-r87" secondAttribute="trailing" constant="8" id="wnw-wI-R8m"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="genreLabel" destination="XtO-wl-BKa" id="yci-nP-7pO"/>
+                        <outlet property="locationLabel" destination="xKa-RC-r87" id="TDq-rs-z7B"/>
+                        <outlet property="moviePosterImageView" destination="dEk-b0-PSd" id="a47-zE-98o"/>
+                        <outlet property="summaryFullTextLabel" destination="qVp-gv-lfx" id="PLa-x1-gQh"/>
+                        <outlet property="summaryLabel" destination="1vd-k3-5uW" id="PV7-XQ-KLw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30g-qT-mFj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
