@@ -489,6 +489,17 @@ Creating the segue of type "Accessory Action" should automatically add a Disclos
 </details>
 <br>
 
-#### Advanced
+#### Advanced: More Custom VCs
 
-3. You may have noticed that some of the labels get hidden when viewing the project on an iPhone 5s. Swap the `summaryText` `UILabel` with a `UITextView` to allow for this portion of the text to be scrollable. Then under “behavior” in attributes, uncheck both Editable and Selectable.
+Wouldn't it be nice if we'd get a different view controller based on whether we tapped on a `MovieTableViewCell`, `MovieRightAlignedTableViewCell` or `Alt1TableViewCell`? For this exercise, create two more `UIViewController` subclasses, one that will be the detail view controller for tapping on a `MovieRightAlignedTableViewCell` and the other for tapping on a `Alt1TableViewCell`.
+
+Feel free to experiment with layout and design as you see fit, but make sure that:
+
+1. You can segue properly to the corresponding view controller
+2. The view controller's UI elements are populated correctly
+3. There are no warnings or errors in your storyboard for each of the view controllers
+
+
+#### Advanced: Using UITextView
+
+You may have noticed that some of the labels get hidden when viewing the project on an iPhone 5s. Swap the `summaryText` `UILabel` with a `UITextView` to allow for this portion of the text to be scrollable. Then under “behavior” in attributes, uncheck both `Editable` and `Selectable`.
