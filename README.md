@@ -32,16 +32,17 @@
 
 <img src="./Images/first_mvp.png" alt="First MVP" width="400">
 
-"Stunning!" - Reel Good, CEO
+"Stunning!" - Reelgood, CEO
 
-"... this app is becoming so beatiful..." - Reel Good, Lead Designer
+"Looks like it could use a little UI work, but definitely an interesting discovery!" - Reelgood, Lead Designer
 
-"How much is this costing us?" - Reel Good, CFO
+"How much is this costing us?" - Reelgood, CFO
 
-"The board will be thrilled" - Reel Good, Investor Relations
+"The board will be thrilled" - Reelgood, Investor Relations
 
-"It's OK." - Reel Good, Crusty iOS Engineer
+"It's OK." - Reelgood, Crusty iOS Engineer
 
+"WHAT." - Reelgood, Web Engineer
 
 Great work on this MVP, but now Reel Good is expecting a lot more out of the next iteration. They want a full screen detail view on the movie and some design tweaks. On top of this, your engineering team has decided that the code base needs some clean up before it gets to large! The next stage of this project will be even more challenging and there's no time to rest on laurels.
 
